@@ -1,18 +1,12 @@
-# raiders-only.com
-# raiders-only.com
+# Gamers-Only.com
 
-
-Raiders-Only
-Raiders-Only is a social media site exclusively for the gaming community. Raiders-Only allows enthusiasts to meet and share content as part of a dynamic and interactive experience.
+Gamers-Only is a social media site exclusively for the gaming community. Gamers-Only allows enthusiasts to meet and share content as part of a dynamic and interactive experience.
 
 Deployed Link:
 
-Placeholder for deployed link:
+[Google.com as a Placeholder](google.com)
 
-
-Wireframes:
-Placeholder for completed wireframes
-
+Wireframes: https://xd.adobe.com/view/17fc49da-03ad-4d3e-6a43-ae2f941d46a8-61cd/
 
 A style guide
 
@@ -22,38 +16,24 @@ Color Scheme:
 
 Font:
 
-Racing Sans One
-Fonts: font-family: ‘Racing Sans One’, cursive;
-<link href="https://fonts.googleapis.com/css?family=Racing+Sans+One" rel=“stylesheet">
+Racing Sans One Fonts: font-family: ‘Racing Sans One’, cursive;
 
+Planning: Planning Board Placeholder
 
-
-Planning:
-Planning Board Placeholder
 
 Trello Board Link:
 
-https://trello.com/b/33zzrbus/raiders-onlycom
+https://trello.com/b/33zzrbus/gamers-onlycom
 
+Schema/ERD for Database ERD
 
-Schema/ERD for Database
-ERD
+Server Routes:
 
-
-Server Routes Plan
-Users
-POST /users Create a new user
+Plan Users POST /users Create a new user
 POST /token User login
 DELETE /token logout user
 GET /users/:id Retrieve user information
-Create Profile
-POST /Create a profile
-GET /Retrieve existing profile
-GET /favorites/:id Retrieve a single favorite
-Add Links (Games)
+Create Profile POST /Create a profile
+GET /Retrieve existing profile GET /favorites/:id Retrieve a single favorite Add Links (Games)
 GET /Games get all game links
 GET /Game/:id get a single game like
-
-Deployed Link:
-
-Placeholder for deployed link:
