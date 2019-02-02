@@ -7,6 +7,10 @@
   color: white
 }
 
+#gameposter {
+  width: 300px
+}
+
 #font-color {
   color: white
 }
@@ -27,6 +31,12 @@
 
 #custom-form {
   background-color: #303030;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+#review-container {
+  background-color: #424242;
   -webkit-border-radius: 10px;
   border-radius: 10px;
 }
