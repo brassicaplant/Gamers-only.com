@@ -11,7 +11,7 @@ class Settings extends Component {
   <div>
 
 
-  <div classname="container">
+  <div className="container">
 
     <div className="row">
       <div className="col-12 my-5 mx-auto">
@@ -38,33 +38,27 @@ class Settings extends Component {
               </button>
 
 
-              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Click below to save your changes</h5>
+              <div className="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div className="modal-dialog" role="document">
+                  <div className="modal-content">
+                    <div className="modal-header">
+                      <h5 className="modal-title" id="exampleModalLabel">You are authorizing Gamers Only to change your Login Information</h5>
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button>
                     </div>
                     <div class="modal-body">
-                      ...
+                      Account Information will be updated when "Save Changes" is clicked
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary">Save changes</button>
+                      <button type="button" class="btn btn-primary">Save Changes</button>
                     </div>
                   </div>
                 </div>
               </div>
 
-
-
-
-
-
-
-            <medium id="label-color" className="form-text">Change or update your GamersOnly account information</medium>
+              <medium id="label-color" className="form-text">Change or update your GamersOnly account information</medium>
           </form>
 
           <form>
@@ -86,7 +80,7 @@ class Settings extends Component {
                   </button>
                 </div>
                 <div class="modal-body">
-                  ...
+                  Do you really want to Delete your account?
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -98,10 +92,12 @@ class Settings extends Component {
 
 
               <medium id="label-color" className="form-text">Delete your GamersOnly account</medium>
-          </div>
+        </div>
           </form>
 
-          </div>
+        </div>
+
+
           <div className="mt-5">
         </div>
       </div>
