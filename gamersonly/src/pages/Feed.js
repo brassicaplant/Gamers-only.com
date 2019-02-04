@@ -19,7 +19,6 @@ class Feed extends Component {
 
 
 
-
         </div>
       </div>
     )
