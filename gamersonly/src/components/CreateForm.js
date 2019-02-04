@@ -174,6 +174,7 @@ class CreateForm extends Component {
         <div className="mt-5">
           <div id="custom-form" className="ml-auto">
             <p id="font-color">Have an account already?<a href="/" onClick={(e)=> {this.props.toggleLogin(e)}}>Click Here</a></p>
+
           </div>
         </div>
       </div>
