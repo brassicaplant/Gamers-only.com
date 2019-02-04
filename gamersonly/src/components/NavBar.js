@@ -16,6 +16,9 @@ class NavBar extends Component {
               <Link id="navbar-item-custom" className="nav-link" to="/feed">Feed</Link>
             </li>
             <li className="nav-item">
+              <Link id="navbar-item-custom" className="nav-link" to="/reviews">Reviews</Link>
+            </li>
+            <li className="nav-item">
               <Link id="navbar-item-custom" className="nav-link" to="/settings">Settings</Link>
             </li>
           </ul>
