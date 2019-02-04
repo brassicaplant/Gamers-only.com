@@ -25,7 +25,7 @@ class CreateForm extends Component {
         </div>
         <div className="mt-5">
           <div id="custom-form">
-            <p>Don't have an account?<a href="/" onClick={(e)=> {this.props.toggleLogin(e)}}>Click Here</a></p>
+            <p>Don't have an account? <a href="/" onClick={(e)=> {this.props.toggleLogin(e)}}>Click Here</a></p>
           </div>
         </div>
       </div>
