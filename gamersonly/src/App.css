@@ -40,6 +40,10 @@
   border-radius: 10px;
 }
 
+#post-des-font {
+  font-family: 'Arial', cursive;
+}
+
 #post-background {
   background-color: #494949;
   -webkit-border-radius: 6px;

@@ -107,7 +107,7 @@ render() {
   <div className="container">
     <div className="row">
       <div className="col-12 my-5 mx-auto">
-        <img className="d-flex justify-content-center mx-auto" id="Logo" src="https://i.imgur.com/VooNS3J.png" alt=""></img>
+        <img className="d-flex justify-content-center mx-auto" id="Logo" src="https://i.imgur.com/MNXViWI.png" alt="logo"></img>
       </div>
     </div>
     <div className="row">

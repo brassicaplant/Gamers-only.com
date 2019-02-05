@@ -22,14 +22,14 @@ class Review extends Component {
         <div id="post-background">
           <div className="container">
             <div className="row">
-              <div className="col-3">
+              <div className="col-md-4">
                 <img className="my-4" id="profile_picture" src={this.state.user.profile_picture} alt="Profile"></img>
                 <p>Posted by: {this.state.user.screen_name}</p>
               </div>
-              <div className="col-9">
+              <div className="col-md-8">
                 <h1 className="my-3">{this.props.post.post_title}</h1>
                 <div className="row">
-                  <p className="pl-3">{this.props.post.post_description}</p>
+                  <p id="post-des-font" className="pl-3">{this.props.post.post_description}</p>
                 </div>
               </div>
             </div>

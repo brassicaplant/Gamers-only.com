@@ -25,7 +25,7 @@ class Login extends Component {
         </div>
         <div className="row">
           <div className="col-9 mb-5 offset-3 mx-auto">
-            {this.state.userlogin ? <LoginForm toggleLogin={this.toggleLogin}/> : <CreateForm toggleLogin={this.toggleLogin}/>}
+            {this.state.userlogin ? <LoginForm logInUser={this.props.logInUser} toggleLogin={this.toggleLogin}/> : <CreateForm toggleLogin={this.toggleLogin}/>}
           </div>
         </div>
       </div>
