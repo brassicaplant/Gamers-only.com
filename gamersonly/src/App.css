@@ -3,6 +3,10 @@
   max-height: 70px;
 }
 
+#profile_picture {
+  width: 200px;
+  max-height: 300px
+}
 
 #label-color {
   color: white
@@ -36,8 +40,8 @@
   border-radius: 10px;
 }
 
-#review-container {
-  background-color: #424242;
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
+#post-background {
+  background-color: #494949;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
 }
