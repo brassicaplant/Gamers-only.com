@@ -164,7 +164,7 @@ class CreateForm extends Component {
                 </div>
               </div>
               <div className="col-6">
-                <p id="font-color">You can upload any image here. <a className="mr-3" href="https://imgur.com/upload">https://imgur.com/upload</a></p>
+                <p id="font-color">You can upload any image here. <a className="mr-3" href="https://imgur.com/upload">Imgur</a></p>
               </div>
             </div>
             <button type="submit" onClick={(e)=> this.handleSubmit(e)} className="btn btn-primary">Submit</button>
