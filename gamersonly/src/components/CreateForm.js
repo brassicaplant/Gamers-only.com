@@ -160,7 +160,7 @@ class CreateForm extends Component {
               <div className="col-6">
                 <div className="form-group">
                   <label id="label-color" htmlFor="exampleInputPicture1">Profile Picture</label>
-                  <input type="text"onChange={(e)=> {this.fileChangedHandler(e)}} value={this.state.profile_picture} className="form-control" id="exampleInputPicture1" required></input>
+                  <input type="text"onChange={(e)=> {this.fileChangedHandler(e)}} value={this.state.profile_picture} placeholder="Picture URL" className="form-control" id="exampleInputPicture1" required></input>
                 </div>
               </div>
               <div className="col-6">
@@ -173,7 +173,7 @@ class CreateForm extends Component {
         </div>
         <div className="mt-5">
           <div id="custom-form" className="ml-auto">
-            <p id="font-color">Have an account already?<a href="/" onClick={(e)=> {this.props.toggleLogin(e)}}>Click Here</a></p>
+            <p className="container" id="font-color">Have an account already?<a href="/" onClick={(e)=> {this.props.toggleLogin(e)}}>Click Here</a></p>
 
           </div>
         </div>

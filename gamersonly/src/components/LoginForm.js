@@ -26,7 +26,7 @@ class LoginForm extends Component {
         </div>
         <div className="mt-5">
           <div id="custom-form">
-            <p id="font-color">Don't have an account?<a href="/" onClick={(e)=> {this.props.toggleLogin(e)}}>Click Here</a></p>
+            <p className="container" id="font-color">Don't have an account?<a href="/" onClick={(e)=> {this.props.toggleLogin(e)}}>Click Here</a></p>
           </div>
         </div>
       </div>)
