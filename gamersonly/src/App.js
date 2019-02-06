@@ -5,24 +5,26 @@ import Feed from './pages/Feed'
 import Settings from './pages/Settings'
 import Forum from './pages/Forum'
 import NavBar from './components/NavBar'
+import Profile from './components/Profile'
 import './App.css';
 
 class AppRouter extends Component {
 
   state = {
-    currentUserInfo: {
-
-    },
-    loggedIn: false
+    currentUserInfo: {},
+    loggedIn: false,
+    userId: 1
   }
 
-  logInUser = async (e, userId) => {
-    e.preventDefault()
+  logInUser = async (userId) => {
     const response = await fetch(`http://localhost:3678/api/users/${userId}`,{
       method: 'GET'
     })
     let newState = await response.json()
-    console.log(newState)
+    this.setState({
+      currentUserInfo: newState
+    })
+    console.log(this)
   }
 
   render () {
@@ -33,10 +35,10 @@ class AppRouter extends Component {
           <Route path="/" exact render={props => <Login logInUser={this.logInUser}/>} />
           <Route path="/feed/" component={Feed} />
           <Route path="/settings/" component={Settings} />
-          <Route path="/forum/" component={Forum}/>
+          <Route exact path="/forum/" component={Forum}/>
+          <Route path={`/:id`} component={Profile}/>
         </div>
       </Router>
-
     )
   }
 };

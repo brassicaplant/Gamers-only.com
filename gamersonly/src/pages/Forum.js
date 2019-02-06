@@ -18,14 +18,14 @@ class Feed extends Component {
   }
 
   componentDidMount = async () => {
-    let response = await fetch('http://localhost:3678/api/posts/', {method: 'GET'})
+    let response = await fetch('http://localhost:3678/api/posts/', {
+      method: 'GET'
+    })
     let posts = await response.json()
     posts.map(post => post.post_creation_date = this.getSeconds(post.post_creation_date))
-    console.log('UnSorted', posts)
     posts.sort(function(a, b) {
       return b.post_creation_date - a.post_creation_date
-    });
-    console.log('Sorted', posts)
+    })
     let newState = {
       posts: [...posts]
     }
@@ -93,7 +93,7 @@ class Feed extends Component {
             ? this.state.posts.map((post, i) => {
               return <Post post={post} key={i}/>
             })
-            : <p id="font-color">No Posts have been made.</p>
+            : <p id="font-color">Loading Posts</p>
       }
     </div>)
   }
