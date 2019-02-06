@@ -4,7 +4,7 @@ class LoginForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    this.props.logInUser()
+    this.props.logInUser(e)
     console.log('Login')
   }
 

@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Route, Link } from 'react-router-dom';
+import Profile from './profile.js';
 
 class Review extends Component {
 
@@ -17,6 +19,9 @@ class Review extends Component {
   }
 
   render() {
+    const {
+      match
+    } = this.props
     return (
       <div id="font-color" className="my-5 container">
         <div id="post-background">
@@ -24,7 +29,9 @@ class Review extends Component {
             <div className="row">
               <div className="col-md-4">
                 <img className="my-4" id="profile_picture" src={this.state.user.profile_picture} alt="Profile"></img>
-                <p>Posted by: {this.state.user.screen_name}</p>
+                <Link to={{
+                  pathname: `/${this.state.user.screen_name}`
+                }}>{this.state.user.screen_name}</Link>
               </div>
               <div className="col-md-8">
                 <h1 className="my-3">{this.props.post.post_title}</h1>
@@ -35,9 +42,9 @@ class Review extends Component {
             </div>
           </div>
         </div>
+        <Route path={`${match.path}/:id`} component={Profile}/>
       </div>
     )
   }
-
 }
 export default Review;
