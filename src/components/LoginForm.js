@@ -35,7 +35,11 @@ class LoginForm extends Component {
     }
     const response = await fetch(`http://localhost:3678/api/users/`,{
       method: 'POST',
-      body: payload
+      body: payload,
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      }
     })
     let userInfo = await response.json()
     console.log(userInfo)
