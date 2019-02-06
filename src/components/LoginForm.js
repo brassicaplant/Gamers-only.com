@@ -19,6 +19,28 @@ class LoginForm extends Component {
     })
   }
 
+  testget = async (e) => {
+    e.preventDefault()
+    const response = await fetch(`http://localhost:3678/api/users/`,{
+      method: 'GET'
+    })
+    let userInfo = await response.json()
+    console.log(userInfo)
+  }
+
+  testpost = async (e) => {
+    e.preventDefault()
+    let payload = {
+      // Customize what you want to send here
+    }
+    const response = await fetch(`http://localhost:3678/api/users/`,{
+      method: 'POST',
+      body: payload
+    })
+    let userInfo = await response.json()
+    console.log(userInfo)
+  }
+
   handleSubmit = (e) => {
     e.preventDefault()
     this.props.logInUser(1)
@@ -42,6 +64,8 @@ class LoginForm extends Component {
               <input type="password" value={this.state.loginPassword} onChange={(e) => this.passwordChange(e)} autoComplete="current-password" className="form-control" id="exampleInputPassword1" placeholder="Password"></input>
             </div>
             <button type="submit" onClick={(e)=> this.handleSubmit(e)} className="btn btn-primary">Submit</button>
+            <button onClick={(e) => {this.testget(e)}}>TEST GET</button>
+            <button onClick={(e) => {this.testpost(e)}}>TEST POST</button>
             <a id="github-button" onClick={this.loginWithGitHub} href="/" className="btn btn-block btn-social btn-github">
               <i className="fa fa-github"></i> Sign in with Github
             </a>
