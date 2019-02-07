@@ -108,13 +108,13 @@ render() {
 <div className="container">
 <div className="row">
   <div className="col-12 my-5 mx-auto">
-        <img className="d-flex justify-content-center mx-auto" id="Logo" src="https://i.imgur.com/VooNS3J.png" alt=""></img>
+        <img className="d-flex justify-content-center mx-auto" id="Logo" src="https://i.imgur.com/MNXViWI.png" alt=""></img>
       </div>
     </div>
 
-<div class="row">
+<div className="row">
 
-<div class="container">
+<div className="container">
   <div id="custom-form" className="col-9 mb-5 offset-3 mx-auto">
     <form>
       <div className="row">
@@ -178,7 +178,7 @@ render() {
         </div>
       </div>
       <button type="submit" onClick={(e)=> this.handleSubmit(e)} className="btn btn-primary">Submit</button>
-      <small id="label-color" className="form-text">We'll never share your data with anyone else.</small>
+      <small id="label-color" className="form-text"></small>
     </form>
 
 
@@ -227,7 +227,7 @@ render() {
 
 
 <button type="button" className="btn btn-danger" data-toggle="modal" data-target="#exampleModal1">
-    Delete!!
+    Delete!
   </button>
 
 
