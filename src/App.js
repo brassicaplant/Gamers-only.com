@@ -13,7 +13,14 @@ class AppRouter extends Component {
   state = {
     currentUserInfo: {},
     loggedIn: false,
-    userId: 1
+    userId: 1,
+    post: false
+  }
+
+  togglePost = () => {
+    this.setState({
+      post: !this.state.post
+    })
   }
 
   logInUser = async (userId) => {
@@ -35,8 +42,8 @@ class AppRouter extends Component {
           <Route path="/" exact render={props => <Login logInUser={this.logInUser}/>} />
           <Route path="/feed/" component={Feed} />
           <Route path="/settings/" component={Settings} />
-          <Route exact path="/forum/" component={Forum}/>
-          <Route path={`/:id`} component={Profile}/>
+          <Route exact path="/forum/" component={props => <Forum togglePost={this.togglePost}/>}/>
+          {this.state.post ? <Route path={`/:id`} component={Profile}/> : ""}
         </div>
       </Router>
     )

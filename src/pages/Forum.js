@@ -91,7 +91,7 @@ class Feed extends Component {
             />
           : this.state.posts.length > 0
             ? this.state.posts.map((post, i) => {
-              return <Post post={post} key={i}/>
+              return <Post togglePost={this.props.togglePost} post={post} key={i}/>
             })
             : <p id="font-color">Loading Posts</p>
       }
