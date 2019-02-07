@@ -14,12 +14,13 @@ class AppRouter extends Component {
     currentUserInfo: {},
     loggedIn: false,
     userId: 1,
-    post: false
+    showProfile: false,
+
   }
 
   togglePost = () => {
     this.setState({
-      post: !this.state.post
+      showProfile: !this.state.showProfile
     })
   }
 
@@ -43,7 +44,7 @@ class AppRouter extends Component {
           <Route path="/feed/" component={Feed} />
           <Route path="/settings/" component={Settings} />
           <Route exact path="/forum/" component={props => <Forum togglePost={this.togglePost}/>}/>
-          {this.state.post ? <Route path={`/:id`} component={Profile}/> : ""}
+          <Route path={`/forum/:id`} component={Profile}/>
         </div>
       </Router>
     )

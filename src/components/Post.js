@@ -27,7 +27,7 @@ class Review extends Component {
                 <img className="my-4" id="profile_picture" src={this.state.user.profile_picture} alt="Profile"></img>
                 <br></br>
                 <Link onClick={()=> {return this.props.togglePost()}} to={{
-                  pathname: `/${this.state.user.screen_name}`
+                  pathname: `forum/${this.state.user.screen_name}`
                 }}>{this.state.user.screen_name}</Link>
               </div>
               <div className="col-md-8">

@@ -12,18 +12,18 @@ class NavBar extends Component {
         </button>
         <div className="ml-3 collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
-            <li className="nav-item">
+            <li className="mr-5 nav-item">
               <Link id="navbar-item-custom" className="nav-link" to="/feed">Feed</Link>
             </li>
-            <li className="nav-item">
+            <li className="mr-5 nav-item">
               <Link id="navbar-item-custom" className="nav-link" to="/forum">Forum</Link>
             </li>
-            <li className="nav-item">
+            <li className="mr-5 nav-item">
               <Link id="navbar-item-custom" className="nav-link" to="/settings">Settings</Link>
             </li>
           </ul>
           <span className="ml-auto nav-item">
-            <Link id="navbar-item-custom" className="nav-link pl-0" to="/">Logout</Link>
+            <Link id="navbar-item-custom" className="nav-link pl-0" to="/">{this.props.loggedIn ? "Logout" : "Login"}</Link>
           </span>
         </div>
       </nav>
