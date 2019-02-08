@@ -26,8 +26,18 @@
   font-size: 30px;
 }
 
+#post-item-custom {
+  color: white;
+  font-size: 25px;
+}
+
 #background {
   background-color: #212121;
+}
+
+#profile-posts {
+  background-color: gray;
+  border-radius: 10px
 }
 
 #Logo {
@@ -39,6 +49,10 @@
   background-color: #303030;
   -webkit-border-radius: 10px;
   border-radius: 10px;
+}
+
+#profile-post-background {
+  background-color: #999999
 }
 
 #post-des-font {

@@ -13,13 +13,13 @@ class ComposePost extends Component {
         <div className="form-group">
           <label htmlFor="subject" id="font-color" className="offset-sm-2 col-sm-2 control-label">Title</label>
           <div className="offset-sm-2 col-sm-8">
-            <input type="text" className="form-control" onChange={(e)=> {this.props.titleChange(e)}} value={this.props.postTitle} id="subject" placeholder="Enter a Title" name="subject"></input>
+            <input type="text" className="form-control" onChange={(e)=> {this.props.titleChange(e)}} value={this.props.postTitle} id="subject" placeholder="Enter a Title" name="subject" required></input>
           </div>
         </div>
         <div className="form-group">
           <label htmlFor="body" id="font-color" className="offset-sm-2 col-sm-2 control-label">Body</label>
           <div className="offset-sm-2 col-sm-8">
-            <textarea name="body" id="body" onChange={(e)=> {this.props.bodyChange(e)}} value={this.props.postBody} className="form-control"></textarea>
+            <textarea name="body" id="body" onChange={(e)=> {this.props.bodyChange(e)}} value={this.props.postBody} className="form-control" required></textarea>
           </div>
         </div>
         <div className="form-group">

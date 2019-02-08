@@ -12,8 +12,8 @@ class AppRouter extends Component {
 
   state = {
     currentUserInfo: {},
-    loggedIn: false,
-    userId: 1,
+    loggedIn: true,
+    userId: 5,
     showProfile: false,
 
   }
@@ -24,15 +24,15 @@ class AppRouter extends Component {
     })
   }
 
-  logInUser = async (userId) => {
-    const response = await fetch(`http://localhost:3678/api/users/${userId}`,{
+  logInUser = async () => {
+    const response = await fetch(`http://localhost:3678/api/users/5`,{
       method: 'GET'
     })
     let newState = await response.json()
     this.setState({
       currentUserInfo: newState
     })
-    console.log(this)
+    console.log(this.state.currentUserInfo)
   }
 
   render () {
@@ -43,8 +43,8 @@ class AppRouter extends Component {
           <Route path="/" exact render={props => <Login logInUser={this.logInUser}/>} />
           <Route path="/feed/" component={Feed} />
           <Route path="/settings/" component={Settings} />
-          <Route exact path="/forum/" component={props => <Forum togglePost={this.togglePost}/>}/>
-          <Route path={`/forum/:id`} component={Profile}/>
+          <Route exact path="/forum/" component={props => <Forum userId={this.state.currentUserInfo.id} togglePost={this.togglePost}/>}/>
+          <Route path={`/user/:id`} component={Profile}/>
         </div>
       </Router>
     )

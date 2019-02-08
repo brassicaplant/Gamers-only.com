@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-
+import Profilepost from './Profile_post.js'
 class Profile extends Component {
 
   state = {
     filtereduserInfo: {},
+    filteredPost: [],
     user: ""
   }
 
@@ -19,17 +20,23 @@ class Profile extends Component {
     this.setState({
       filtereduserInfo: filtereduserInfo[0]
     })
-    console.log(this.state.filtereduserInfo)
-    console.log(this.state.user)
+    const response2 = await fetch('http://localhost:3678/api/posts/',{
+      method: 'GET'
+    })
+    let listOfPosts = await response2.json()
+    let filteredPost = listOfPosts.filter(post => post.poster_user_id === this.state.filtereduserInfo.id)
+    this.setState({
+      filteredPost: [...filteredPost]
+    })
   }
 
   render() {
     return (
-      <div id="font-color">
-        <div id="post-background" className="container">
+      <div id="font-color" className="my-5 py-5">
+        <div id="post-background" className="pb-2 container">
           <div className="row">
             <div className="col-md-4">
-              <img id="profile_picture" src={this.state.filtereduserInfo.profile_picture ? this.state.filtereduserInfo.profile_picture : ""} alt="Profile"></img>
+              <img className="py-4" id="profile_picture" src={this.state.filtereduserInfo.profile_picture ? this.state.filtereduserInfo.profile_picture : ""} alt="Profile"></img>
             </div>
             <div className="col-md-8">
               <div className="row">
@@ -42,6 +49,10 @@ class Profile extends Component {
                 </div>
               </div>
             </div>
+          </div>
+          <div className="pb-2" id="profile-posts">
+            <p className="pl-2">Posts made by {this.state.filtereduserInfo.screen_name}</p>
+            {this.state.filteredPost.map((post, i) => <Profilepost post={post} key={i}/>)}
           </div>
         </div>
       </div>

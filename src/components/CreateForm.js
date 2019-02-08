@@ -5,6 +5,7 @@ class CreateForm extends Component {
   state = {
     password: "",
     confPassword: "",
+    about_me: "",
     username: "",
     firstName: "",
     lastName: "",
@@ -63,6 +64,12 @@ class CreateForm extends Component {
     }
   }
 
+  aboutChange = (e) => {
+    this.setState({
+      about_me: e.target.value
+    })
+  }
+
   confPasswordChange = (e) => {
     this.passwordMatch(e)
     this.setState({
@@ -89,7 +96,8 @@ class CreateForm extends Component {
         last_name: this.state.lastName,
         age: this.state.age,
         email: this.state.email,
-        profile_picture: this.state.profile_picture
+        profile_picture: this.state.profile_picture,
+        about_me: this.state.about_me
       }
       fetch('http://localhost:3678/api/users/', {
         method: 'POST',
@@ -100,6 +108,7 @@ class CreateForm extends Component {
         }
       })
     }
+
   }
 
   render() {
@@ -155,6 +164,10 @@ class CreateForm extends Component {
               <ul>
                 <li id="font-color" className="message1">Passwords must match</li>
               </ul>
+            </div>
+            <div className="form-group">
+              <label id="label-color" htmlFor="exampleInputUsername2">About me</label>
+              <textarea type="text" rows="5" autoComplete="username" onChange={(e)=> {this.aboutChange(e)}} value={this.state.about_me} className="form-control" id="exampleInputUsername2" required></textarea>
             </div>
             <div className="row">
               <div className="col-6">

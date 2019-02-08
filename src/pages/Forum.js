@@ -34,8 +34,9 @@ class Feed extends Component {
 
   handleSubmit = async (e) => {
     e.preventDefault()
+    console.log(this.props.userId)
     let postInfo = {
-      poster_user_id: 1,
+      poster_user_id: 5,
       post_title: this.state.postTitle,
       post_description: this.state.postBody
     }
@@ -91,7 +92,6 @@ class Feed extends Component {
             />
           : this.state.posts.length > 0
             ? this.state.posts.map((post, i) => {
-              console.log(post)
               return <Post togglePost={this.props.togglePost} post={post} key={i}/>
             })
             : <p id="font-color">Loading Posts</p>

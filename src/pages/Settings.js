@@ -11,12 +11,28 @@ class Settings extends Component {
     age: "",
     email: "",
     passwordMatch: false,
-    profile_picture: ""
+    profile_picture: "",
+    user: 5
+  }
+
+  componentDidMount = async () => {
+    const response = await fetch(`http://localhost:3678/api/users/${this.state.user}`,{
+      method: 'GET'
+    })
+    let response2 = await response.json()
+    this.setState({
+      password: response2.password,
+      username: response2.screen_name,
+      firstName: response2.first_name,
+      lastName: response2.last_name,
+      age: response2.age,
+      email: response2.email,
+      profile_picture: response2.profile_picture,
+    })
   }
 
   fileChangedHandler = event => {
     this.setState({ profile_picture: event.target.value })
-    console.log(event.target.value)
   }
 
   ageChange = (e) => {
@@ -68,7 +84,6 @@ class Settings extends Component {
     this.setState({
       confPassword: e.target.value
     })
-    console.log(e.target.value)
   }
 
   passwordChange = (e) => {
@@ -76,7 +91,6 @@ class Settings extends Component {
     this.setState({
       password: e.target.value
     })
-    console.log(e.target.value)
   }
 
   handleSubmit = (e) => {
@@ -91,14 +105,15 @@ class Settings extends Component {
         email: this.state.email,
         profile_picture: this.state.profile_picture
       }
-      fetch('http://localhost:3678/api/users/', {
-        method: 'POST',
+      fetch('http://localhost:3678/api/users/5/', {
+        method: 'PATCH',
         body: JSON.stringify(userInfo),
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         }
       })
+      console.log('changed')
     }
   }
 
@@ -175,40 +190,6 @@ render() {
               </div>
             </div>
             <button type="submit" onClick={(e)=> this.handleSubmit(e)} className="btn btn-primary">Submit</button>
-            <small id="label-color" className="form-text">We'll never share your data with anyone else.</small>
-          </form>
-          <form>
-            <div className="form-group">
-              <label id="label-color" htmlFor="exampleInputEmail2">Email address</label>
-              <input type="email" autoComplete="username email" className="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" placeholder="Enter email"></input>
-            </div>
-            <div className="form-group">
-              <label id="label-color" htmlFor="exampleInputPassword3">Password</label>
-              <input type="password" autoComplete="current-password" className="form-control" id="exampleInputPassword3" placeholder="Password"></input>
-            </div>
-            <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-              Change
-            </button>
-            <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div className="modal-dialog" role="document">
-                <div className="modal-content">
-                  <div className="modal-header">
-                    <h5 className="modal-title" id="exampleModalLabel">You are authorizing Gamers Only to change your Login Information</h5>
-                    <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div className="modal-body">
-                    Account Information will be updated when "Save Changes" is clicked
-                  </div>
-                  <div className="modal-footer">
-                    <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" className="btn btn-primary">Save Changes</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <h5 id="label-color" className="form-text">Change or update your GamersOnly account information</h5>
           </form>
           <form>
             <div className="form-group">

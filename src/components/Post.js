@@ -19,16 +19,19 @@ class Review extends Component {
 
   render() {
     return (
-      <div id="font-color" className="my-5 container">
+      <div id="font-color" className="mt-5 pb-5 container">
         <div id="post-background">
           <div className="container">
             <div className="row">
               <div className="col-md-4">
                 <img className="my-4" id="profile_picture" src={this.state.user.profile_picture} alt="Profile"></img>
                 <br></br>
-                <Link onClick={()=> {return this.props.togglePost()}} to={{
-                  pathname: `forum/${this.state.user.screen_name}`
-                }}>{this.state.user.screen_name}</Link>
+                Posted by
+                <div>
+                  <Link id="navbar-item-custom" onClick={()=> {return this.props.togglePost()}} to={{
+                    pathname: `user/${this.state.user.screen_name}`
+                  }}>{this.state.user.screen_name}</Link>
+                </div>
               </div>
               <div className="col-md-8">
                 <h1 className="my-3">{this.props.post.post_title}</h1>
