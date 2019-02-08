@@ -51,6 +51,11 @@
   border-radius: 10px;
 }
 
+#quote {
+  color: white;
+  font-family: cursive;
+}
+
 #profile-post-background {
   background-color: #999999
 }

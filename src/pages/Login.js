@@ -22,6 +22,7 @@ class Login extends Component {
           <div className="col-12 my-5 mx-auto">
             <img className="d-flex justify-content-center mx-auto" id="Logo" src="https://i.imgur.com/MNXViWI.png" alt=""></img>
           </div>
+          <h1 className="mx-auto" id="quote">"Normies just don't get it" -Cooper</h1>
         </div>
         <div className="row">
           <div className="col-9 mb-5 offset-3 mx-auto">

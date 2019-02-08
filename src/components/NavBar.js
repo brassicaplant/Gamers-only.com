@@ -13,7 +13,7 @@ class NavBar extends Component {
         <div className="ml-3 collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="mr-5 nav-item">
-              <Link id="navbar-item-custom" className="nav-link" to={`/user/Gustav`}>Feed</Link>
+              <Link id="navbar-item-custom" className="nav-link" to={`/user/Galvanize%20Student`}>Feed</Link>
             </li>
             <li className="mr-5 nav-item">
               <Link id="navbar-item-custom" className="nav-link" to="/forum">Forum</Link>
